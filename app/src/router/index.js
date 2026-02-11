@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import PixelArt from '@/views/PixelArt.vue'
+import TacoCard from '@/components/TacoCard.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,7 +7,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: PixelArt,
+      component: TacoCard,
     },
   ],
 })
