@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h2>{{ topping.name }}</h2>
-    <h3>{{ topping.desc }}</h3>
+    <p>{{ topping.name }}</p>
+    <p>{{ topping.desc }}</p>
   </div>
 </template>
 
@@ -14,4 +14,14 @@ defineProps({
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 150px;
+  width: 100px;
+  border: 1px solid black;
+}
+</style>
