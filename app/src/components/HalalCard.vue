@@ -1,7 +1,6 @@
 <template>
   <div>
     <p>{{ topping.name }}</p>
-    <p>{{ topping.desc }}</p>
   </div>
 </template>
 
@@ -20,8 +19,10 @@ div {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 150px;
-  width: 100px;
+  height: 250px;
+  width: 200px;
   border: 1px solid black;
+  margin: 40px;
+  font-size: 40px;
 }
 </style>
