@@ -22,7 +22,6 @@ const toppings = [
   { name: 'Lamb', imageurl: 'asdasd' },
   { name: 'White Sauce', imageurl: 'asdasd' },
   { name: 'Hot Sauce', imageurl: 'asdasd' },
-  { name: 'BBQ Sauce', imageurl: 'asdasd' },
 ]
 </script>
 
