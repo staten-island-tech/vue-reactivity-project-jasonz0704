@@ -1,11 +1,13 @@
 <template>
-  <h1>Halal Maker</h1>
-  <div class="container">
-    <div class="displayorder">
-      <img class="halalplate" src="/images/halalplate.webp" alt="Halal Plate" />
-    </div>
-    <div class="toppings">
-      <HalalCard v-for="topping in toppings" :key="topping.name" :topping="topping"></HalalCard>
+  <div class="background">
+    <h1>Halal Maker</h1>
+    <div class="container">
+      <div class="displayorder">
+        <img class="halalplate" src="/images/halalplate.webp" alt="Halal Plate" />
+      </div>
+      <div class="toppings">
+        <HalalCard v-for="topping in toppings" :key="topping.name" :topping="topping"></HalalCard>
+      </div>
     </div>
   </div>
 </template>
@@ -26,6 +28,9 @@ const toppings = [
 </script>
 
 <style scoped>
+.background {
+  background-color: white;
+}
 div {
   padding: 16px;
 }
@@ -45,6 +50,7 @@ h1 {
   display: flex;
   flex: 1;
 }
+
 .toppings {
   display: flex;
   width: 80vw;
@@ -52,16 +58,5 @@ h1 {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-}
-.card {
-  border: 1px solid #ccc;
-  padding: 12px;
-  margin-bottom: 12px;
-  border-radius: 6px;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
 }
 </style>
