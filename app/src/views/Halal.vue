@@ -5,8 +5,12 @@
       <div class="displayorder">
         <img class="halalplate" src="/images/halalplate.webp" alt="Halal Plate" />
       </div>
+
       <div class="toppings">
-        <HalalCard v-for="topping in toppings" :key="topping.name" :topping="topping"></HalalCard>
+        <HalalCard v-for="topping in toppings" :key="topping.name" :topping="topping">
+          <button class="addbutton">Add to Halal</button>
+          <button class="removebutton">Remove from Halal</button>
+        </HalalCard>
       </div>
     </div>
   </div>
@@ -58,5 +62,31 @@ h1 {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+}
+.removebutton {
+  height: 35px;
+  width:;
+  background-color: rgb(197, 39, 39);
+  font-size: 15px;
+  border-radius: 5px;
+  color: white;
+  border-width: 2px;
+}
+
+.removebutton:hover {
+  background-color: rgb(255, 51, 51);
+}
+
+.addbutton {
+  height: 35px;
+  width:;
+  background-color: rgb(27, 141, 61);
+  font-size: 15px;
+  border-radius: 5px;
+  color: white;
+}
+
+.addbutton:hover {
+  background-color: rgb(33, 190, 80);
 }
 </style>

@@ -1,9 +1,8 @@
 <template>
   <div class="card">
     <p>{{ topping.name }}</p>
-
-    <button class="addbutton">Add to Halal</button>
-    <button class="removebutton">Remove from Halal</button>
+    <img :src="topping.imageurl" alt="" />
+    <slot></slot>
   </div>
 </template>
 
@@ -32,23 +31,5 @@ defineProps({
   border-radius: 6px;
   border: 1px solid #ccc;
   background-color: rgb(255, 255, 255);
-}
-
-.removebutton {
-  height: 35px;
-  width:;
-  background-color: rgb(197, 39, 39);
-  font-size: 15px;
-  border-radius: 5px;
-  color: white;
-  border-width: 2px;
-}
-.addbutton {
-  height: 35px;
-  width:;
-  background-color: rgb(27, 141, 61);
-  font-size: 15px;
-  border-radius: 5px;
-  color: white;
 }
 </style>
