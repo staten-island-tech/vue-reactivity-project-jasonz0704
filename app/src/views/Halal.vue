@@ -8,8 +8,10 @@
 
       <div class="toppings">
         <HalalCard v-for="topping in toppings" :key="topping.name" :topping="topping">
-          <button class="addbutton">Add to Halal</button>
-          <button class="removebutton">Remove from Halal</button>
+          <button @click="addtohalal(topping.name)" class="addbutton">Add to Halal</button>
+          <button @click="removefromhalal(topping.name)" class="removebutton">
+            Remove from Halal
+          </button>
         </HalalCard>
       </div>
     </div>
@@ -17,6 +19,13 @@
 </template>
 
 <script setup>
+function addtohalal(item) {
+  console.log('Added' + item)
+}
+
+function removefromhalal(item) {
+  console.log('Removed ' + item)
+}
 import HalalCard from '@/components/HalalCard.vue'
 
 const toppings = [

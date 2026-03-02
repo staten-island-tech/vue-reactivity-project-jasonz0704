@@ -30,6 +30,5 @@ defineProps({
   margin-bottom: 12px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  background-color: rgb(255, 255, 255);
 }
 </style>
