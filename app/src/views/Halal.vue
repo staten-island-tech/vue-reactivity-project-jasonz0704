@@ -2,9 +2,7 @@
   <div class="background">
     <h1>Halal Maker</h1>
     <div class="container">
-      <div class="displayorder">
-        <img class="halalplate" src="/images/halalplate.webp" alt="Halal Plate" />
-      </div>
+      <HalalPlate></HalalPlate>
 
       <div class="toppings">
         <HalalCard v-for="topping in toppings" :key="topping.name" :topping="topping">
@@ -19,16 +17,24 @@
 </template>
 
 <script setup>
-function addtohalal(item) {
-  console.log('Added' + item)
-}
-
-function removefromhalal(item) {
-  console.log('Removed ' + item)
-}
+import { ref } from 'vue'
 import HalalCard from '@/components/HalalCard.vue'
+import HalalPlate from '@/components/HalalPlate.vue'
 
-const toppings = [
+function addtohalal(name) {
+  if (!selectedtoppings.value.includes(name)) {
+    selectedtoppings.value.push(name)
+  }
+  console.log('Added ' + name)
+}
+function removefromhalal(name) {
+  selectedtoppings.value = selectedtoppings.value.filter((t) => t !== name)
+  console.log('Removed ' + name)
+}
+
+const selectedtoppings = []
+
+const toppings = ref([
   { name: 'Rice', imageurl: 'asdasd' },
   { name: 'Lettuce', imageurl: 'asdasd' },
   { name: 'Tomato', imageurl: 'asdasd' },
@@ -37,7 +43,7 @@ const toppings = [
   { name: 'Lamb', imageurl: 'asdasd' },
   { name: 'White Sauce', imageurl: 'asdasd' },
   { name: 'Hot Sauce', imageurl: 'asdasd' },
-]
+])
 </script>
 
 <style scoped>
@@ -52,11 +58,6 @@ h1 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 50px;
-}
-
-.halalplate {
-  max-width: 400px;
-  max-height: 400px;
 }
 
 .container {
@@ -74,7 +75,6 @@ h1 {
 }
 .removebutton {
   height: 35px;
-  width:;
   background-color: rgb(197, 39, 39);
   font-size: 15px;
   border-radius: 5px;
@@ -88,7 +88,6 @@ h1 {
 
 .addbutton {
   height: 35px;
-  width:;
   background-color: rgb(27, 141, 61);
   font-size: 15px;
   border-radius: 5px;
