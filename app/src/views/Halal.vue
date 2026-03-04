@@ -2,14 +2,16 @@
   <div class="background">
     <h1>Halal Maker</h1>
     <div class="container">
-      <HalalPlate></HalalPlate>
+      <HalalPlate
+        v-for="selectedtopping in selectedtoppings"
+        :key="selectedtopping.name"
+        :selectedtopping="selectedtopping"
+      ></HalalPlate>
 
       <div class="toppings">
         <HalalCard v-for="topping in toppings" :key="topping.name" :topping="topping">
-          <button @click="addtohalal(topping.name)" class="addbutton">Add to Halal</button>
-          <button @click="removefromhalal(topping.name)" class="removebutton">
-            Remove from Halal
-          </button>
+          <button @click="addtohalal(topping)" class="addbutton">Add to Halal</button>
+          <button @click="removefromhalal(topping)" class="removebutton">Remove from Halal</button>
         </HalalCard>
       </div>
     </div>
@@ -21,18 +23,18 @@ import { ref } from 'vue'
 import HalalCard from '@/components/HalalCard.vue'
 import HalalPlate from '@/components/HalalPlate.vue'
 
-function addtohalal(name) {
-  if (!selectedtoppings.value.includes(name)) {
-    selectedtoppings.value.push(name)
+function addtohalal(topping) {
+  if (!selectedtoppings.value.includes(topping)) {
+    selectedtoppings.value.push(topping)
   }
-  console.log('Added ' + name)
+  console.log(selectedtoppings.value)
 }
-function removefromhalal(name) {
-  selectedtoppings.value = selectedtoppings.value.filter((t) => t !== name)
-  console.log('Removed ' + name)
+function removefromhalal(topping) {
+  selectedtoppings.value = selectedtoppings.value.filter((t) => t !== topping)
+  console.log(selectedtoppings.value)
 }
 
-const selectedtoppings = []
+const selectedtoppings = ref([])
 
 const toppings = ref([
   { name: 'Rice', imageurl: 'asdasd' },

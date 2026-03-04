@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <p>{{ topping.name }}</p>
-    <img :src="topping.imageurl" alt="" />
+    <img class="toppingimage" :src="topping.imageurl" :alt="topping.name" />
     <slot></slot>
   </div>
 </template>
@@ -30,5 +30,10 @@ defineProps({
   margin-bottom: 12px;
   border-radius: 6px;
   border: 1px solid #ccc;
+}
+
+.toppingimage {
+  height: 100px;
+  width: 100px;
 }
 </style>
