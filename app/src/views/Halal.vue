@@ -2,12 +2,13 @@
   <div class="background">
     <h1>Halal Maker</h1>
     <div class="container">
-      <HalalPlate
-        v-for="selectedtopping in selectedtoppings"
-        :key="selectedtopping.name"
-        :selectedtopping="selectedtopping"
-      ></HalalPlate>
-
+      <div class="order">
+        <HalalPlate
+          v-for="selectedtopping in selectedtoppings"
+          :key="selectedtopping.name"
+          :selectedtopping="selectedtopping"
+        ></HalalPlate>
+      </div>
       <div class="toppings">
         <HalalCard v-for="topping in toppings" :key="topping.name" :topping="topping">
           <button @click="addtohalal(topping)" class="addbutton">Add to Halal</button>
@@ -34,10 +35,10 @@ function removefromhalal(topping) {
   console.log(selectedtoppings.value)
 }
 
-const selectedtoppings = ref([])
+const selectedtoppings = ref([{ name: 'halalplate', imageurl: '/images/halalplate.webp' }])
 
 const toppings = ref([
-  { name: 'Rice', imageurl: 'asdasd' },
+  { name: 'Rice', imageurl: '/images/cookie.png' },
   { name: 'Lettuce', imageurl: 'asdasd' },
   { name: 'Tomato', imageurl: 'asdasd' },
   { name: 'Onion', imageurl: 'asdasd' },
