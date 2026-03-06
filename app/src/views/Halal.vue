@@ -3,12 +3,14 @@
     <h1>Halal Maker</h1>
     <div class="container">
       <div class="order">
+        <img class="halalplate" src="/images/halalplate.webp" alt="halalplate" />
         <HalalPlate
           v-for="selectedtopping in selectedtoppings"
           :key="selectedtopping.name"
           :selectedtopping="selectedtopping"
         ></HalalPlate>
       </div>
+
       <div class="toppings">
         <HalalCard v-for="topping in toppings" :key="topping.name" :topping="topping">
           <button @click="addtohalal(topping)" class="addbutton">Add to Halal</button>
@@ -35,7 +37,7 @@ function removefromhalal(topping) {
   console.log(selectedtoppings.value)
 }
 
-const selectedtoppings = ref([{ name: 'halalplate', imageurl: '/images/halalplate.webp' }])
+const selectedtoppings = ref([])
 
 const toppings = ref([
   { name: 'Rice', imageurl: '/images/cookie.png' },
@@ -44,7 +46,7 @@ const toppings = ref([
   { name: 'Onion', imageurl: 'asdasd' },
   { name: 'Chicken', imageurl: 'asdasd' },
   { name: 'Lamb', imageurl: 'asdasd' },
-  { name: 'White Sauce', imageurl: 'asdasd' },
+  { name: 'White Sauce', imageurl: '/images/whitesauce.png' },
   { name: 'Hot Sauce', imageurl: 'asdasd' },
 ])
 </script>
@@ -59,8 +61,8 @@ div {
 
 h1 {
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 50px;
+  margin: 20px;
+  font-size: 60px;
 }
 
 .container {
@@ -78,6 +80,7 @@ h1 {
 }
 .removebutton {
   height: 35px;
+  width: 150px;
   background-color: rgb(197, 39, 39);
   font-size: 15px;
   border-radius: 5px;
@@ -91,6 +94,7 @@ h1 {
 
 .addbutton {
   height: 35px;
+  width: 100px;
   background-color: rgb(27, 141, 61);
   font-size: 15px;
   border-radius: 5px;
@@ -99,5 +103,10 @@ h1 {
 
 .addbutton:hover {
   background-color: rgb(33, 190, 80);
+}
+
+.halalplate {
+  width: 400px;
+  height: 400px;
 }
 </style>

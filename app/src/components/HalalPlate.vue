@@ -16,7 +16,10 @@ defineProps({
 
 <style scoped>
 .orderedtoppingimage {
-  max-width: 400px;
-  max-height: 400px;
+  position: absolute;
+  bottom: 450px;
+  left: 125px;
+  width: 250px;
+  height: 250px;
 }
 </style>

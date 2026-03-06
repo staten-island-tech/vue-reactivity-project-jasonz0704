@@ -16,24 +16,26 @@ defineProps({
 </script>
 
 <style scoped>
+p {
+  margin: 10px;
+}
 .card {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 250px;
-  width: 300px;
-  margin: 40px auto;
-  font-size: 40px;
+  height: 325px;
+  width: 275px;
+  margin: 20px auto;
+  font-size: 35px;
   text-align: center;
-  padding: 12px;
-  margin-bottom: 12px;
-  border-radius: 6px;
+  margin-bottom: 50px;
+  border-radius: 4px;
   border: 1px solid #ccc;
 }
 
 .toppingimage {
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
 }
 </style>
