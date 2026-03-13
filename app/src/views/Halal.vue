@@ -30,24 +30,22 @@ function addtohalal(topping) {
   if (!selectedtoppings.value.includes(topping)) {
     selectedtoppings.value.push(topping)
   }
-  console.log(selectedtoppings.value)
 }
 function removefromhalal(topping) {
   selectedtoppings.value = selectedtoppings.value.filter((t) => t !== topping)
-  console.log(selectedtoppings.value)
 }
 
 const selectedtoppings = ref([])
 
 const toppings = ref([
-  { name: 'Rice', imageurl: '/images/cookie.png' },
-  { name: 'Lettuce', imageurl: 'asdasd' },
-  { name: 'Tomato', imageurl: 'asdasd' },
+  { name: 'Rice', imageurl: '/images/rice.png' },
+  { name: 'Lettuce', imageurl: '/images/lettuce.png' },
+  { name: 'Tomato', imageurl: '/images/tomato.png' },
   { name: 'Onion', imageurl: 'asdasd' },
   { name: 'Chicken', imageurl: 'asdasd' },
-  { name: 'Lamb', imageurl: 'asdasd' },
+  { name: 'Lamb', imageurl: '/images/lamb.png' },
   { name: 'White Sauce', imageurl: '/images/whitesauce.png' },
-  { name: 'Hot Sauce', imageurl: 'asdasd' },
+  { name: 'Hot Sauce', imageurl: '/images/hotsauce.png' },
 ])
 </script>
 
